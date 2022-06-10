@@ -3,16 +3,28 @@ syntax = "proto3";
 package wiki;
 
 service WikiService {
-  rpc AddOne (AddOneRequest) returns (AddOneResponse) {}
+  rpc AddPage (AddPageRequest) returns (AddPageResponse) {}
+  rpc RemovePage (RemovePageRequest) returns (RemovePageResponse) {}
 }
 
-message AddOneRequest {
+// ADD
+message AddPageRequest {
   string parentId = 1;
   string name = 2;
 }
 
-message AddOneResponse {
+message AddPageResponse {
   int32 status = 1;
   repeated string error = 2;
   string id = 3;
+}
+
+//REMOVE
+message RemovePageRequest {
+  string id = 1;
+}
+
+message RemovePageResponse {
+  int32 status = 1;
+  repeated string error = 2;
 }
