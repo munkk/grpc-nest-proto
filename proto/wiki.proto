@@ -3,9 +3,32 @@ syntax = "proto3";
 package wiki;
 
 service WikiService {
+  rpc GetRoots (GetRootsRequest) returns (GetRootsResponse) {}
+  rpc GetById (GetByIdRequest) returns (GetByIdResponse) {}
   rpc AddPage (AddPageRequest) returns (AddPageResponse) {}
   rpc RemovePage (RemovePageRequest) returns (RemovePageResponse) {}
 }
+
+// GET
+message GetRootsRequest {}
+
+message GetRootsResponse {
+  int32 status = 1;
+  repeated string error = 2;
+}
+
+message GetByIdRequest {
+  string id = 1;
+}
+
+message GetByIdResponse {
+  int32 status = 1;
+  string id = 2;
+  string name = 3;
+  repeated WikiPage children = 4;
+  repeated string error = 5; 
+}
+
 
 // ADD
 message AddPageRequest {
@@ -27,4 +50,13 @@ message RemovePageRequest {
 message RemovePageResponse {
   int32 status = 1;
   repeated string error = 2;
+}
+
+
+// Entities
+message WikiPage {
+  string id = 1;
+  string name = 2;
+  string parent = 3;
+  string children = 4;
 }
