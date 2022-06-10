@@ -58,5 +58,5 @@ message WikiPage {
   string id = 1;
   string name = 2;
   string parent = 3;
-  string children = 4;
+  repeated WikiPage children = 4;
 }
