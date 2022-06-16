@@ -13,8 +13,9 @@ service WikiService {
 message GetRootsRequest {}
 
 message GetRootsResponse {
-  int32 status = 1;
-  repeated string error = 2;
+  repeated WikiPage pages = 1;
+  int32 status = 2;
+  repeated string error = 3;
 }
 
 message GetByIdRequest {
