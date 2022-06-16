@@ -13,7 +13,7 @@ service WikiService {
 message GetRootsRequest {}
 
 message GetRootsResponse {
-  repeated WikiPage pages = 1;
+  repeated WikiPage data = 1;
   int32 status = 2;
   repeated string error = 3;
 }
