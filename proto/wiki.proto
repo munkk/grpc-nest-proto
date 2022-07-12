@@ -54,13 +54,14 @@ message RemovePageResponse {
   repeated string error = 2;
 }
 
-
 // Entities
 message WikiPage {
-  int32 level = 1;
-  string id = 2;
-  string name = 3;
-  string parentId = 4;
-  string ownerId = 5;
+  string id = 1;
+  bool isRoot = 2;
+  string parentId = 3;
+  string name = 4;
+  string html = 5;
   repeated WikiPage children = 6;
+  string createdAt = 7;
+  string updatedAt = 8;
 }
