@@ -33,9 +33,9 @@ message GetByIdResponse {
 
 // ADD
 message AddPageRequest {
-  int32 level = 1;
-  string name = 2;
-  string parentId = 3;
+  string name = 1;
+  string parentId = 2;
+  string html = 3;
 }
 
 message AddPageResponse {
