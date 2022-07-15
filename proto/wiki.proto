@@ -58,10 +58,11 @@ message RemovePageResponse {
 message WikiPage {
   string id = 1;
   bool isRoot = 2;
-  string parentId = 3;
+  string parent = 3;
   string name = 4;
   string html = 5;
   repeated WikiPage children = 6;
-  string createdAt = 7;
-  string updatedAt = 8;
+  int32 childrenCount = 7;
+  string createdAt = 8;
+  string updatedAt = 9;
 }
