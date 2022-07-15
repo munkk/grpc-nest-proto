@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "google/protobuf/timestamp.proto";
+
 package wiki;
 
 service WikiService {
@@ -63,6 +65,6 @@ message WikiPage {
   string html = 5;
   repeated WikiPage children = 6;
   int32 childrenCount = 7;
-  string createdAt = 8;
-  string updatedAt = 9;
+  google.protobuf.Timestamp createdAt = 8;
+  google.protobuf.Timestamp updatedAt = 9;
 }
