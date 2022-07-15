@@ -58,7 +58,7 @@ message RemovePageResponse {
 message WikiPage {
   string id = 1;
   bool isRoot = 2;
-  string parent = 3;
+  WikiPage parent = 3;
   string name = 4;
   string html = 5;
   repeated WikiPage children = 6;
