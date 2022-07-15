@@ -6,6 +6,7 @@ package wiki;
 
 service WikiService {
   rpc GetRoots (GetRootsRequest) returns (GetRootsResponse) {}
+  rpc GetChildren (GetChildrenRequest) returns (GetChildrenResponse) {}
   rpc GetById (GetByIdRequest) returns (GetByIdResponse) {}
   rpc AddPage (AddPageRequest) returns (AddPageResponse) {}
   rpc RemovePage (RemovePageRequest) returns (RemovePageResponse) {}
@@ -15,6 +16,16 @@ service WikiService {
 message GetRootsRequest {}
 
 message GetRootsResponse {
+  repeated WikiPage data = 1;
+  int32 status = 2;
+  repeated string error = 3;
+}
+
+message GetChildrenRequest {
+  string id = 1;
+}
+
+message GetChildrenResponse {
   repeated WikiPage data = 1;
   int32 status = 2;
   repeated string error = 3;
