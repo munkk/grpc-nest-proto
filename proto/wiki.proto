@@ -8,7 +8,7 @@ service WikiService {
   rpc GetRoots (GetRootsRequest) returns (GetRootsResponse) {}
   rpc GetChildren (GetChildrenRequest) returns (GetChildrenResponse) {}
   rpc GetParent (GetParentRequest) returns (GetParentResponse) {}
-  rpc GetById (GetByIdRequest) returns (GetByIdResponse) {}
+  rpc GetPage (GetPageRequest) returns (GetPageResponse) {}
   rpc AddPage (AddPageRequest) returns (AddPageResponse) {}
   rpc RemovePage (RemovePageRequest) returns (RemovePageResponse) {}
 }
@@ -42,16 +42,14 @@ message GetParentResponse {
   repeated string error = 3;
 }
 
-message GetByIdRequest {
+message GetPageRequest {
   string id = 1;
 }
 
-message GetByIdResponse {
-  int32 status = 1;
-  string id = 2;
-  string name = 3;
-  repeated WikiPage children = 4;
-  repeated string error = 5; 
+message GetPageResponse {
+  WikiPage data = 1;
+  int32 status = 2;
+  repeated string error = 3; 
 }
 
 
