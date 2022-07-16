@@ -7,7 +7,7 @@ package wiki;
 service WikiService {
   rpc GetRoots (GetRootsRequest) returns (GetRootsResponse) {}
   rpc GetChildren (GetChildrenRequest) returns (GetChildrenResponse) {}
-  rpc GetParents (GetParentRequest) returns (GetParentResponse) {}
+  rpc GetParent (GetParentRequest) returns (GetParentResponse) {}
   rpc GetById (GetByIdRequest) returns (GetByIdResponse) {}
   rpc AddPage (AddPageRequest) returns (AddPageResponse) {}
   rpc RemovePage (RemovePageRequest) returns (RemovePageResponse) {}
