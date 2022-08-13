@@ -66,6 +66,19 @@ message AddPageResponse {
   string id = 3;
 }
 
+// UPDATE
+message UpdatePageRequest {
+  string id = 1;
+  string name = 2;
+  string html = 3;
+}
+
+message UpdatePageResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  string id = 3;
+}
+
 //REMOVE
 message RemovePageRequest {
   string id = 1;
