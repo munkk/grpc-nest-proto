@@ -10,6 +10,7 @@ service WikiService {
   rpc GetParent (GetParentRequest) returns (GetParentResponse) {}
   rpc GetPage (GetPageRequest) returns (GetPageResponse) {}
   rpc AddPage (AddPageRequest) returns (AddPageResponse) {}
+  rpc UpdatePage (UpdatePageRequest) returns (UpdatePageResponse) {}
   rpc RemovePage (RemovePageRequest) returns (RemovePageResponse) {}
 }
 
