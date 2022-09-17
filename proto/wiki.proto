@@ -15,7 +15,9 @@ service WikiService {
 }
 
 // GET
-message GetRootsRequest {}
+message GetRootsRequest {
+  string owner = 1;
+}
 
 message GetRootsResponse {
   repeated WikiPage data = 1;
