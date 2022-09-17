@@ -59,6 +59,7 @@ message AddPageRequest {
   string name = 1;
   string parentId = 2;
   string html = 3;
+  string owner = 4;
 }
 
 message AddPageResponse {
@@ -78,11 +79,13 @@ message UpdatePageResponse {
   int32 status = 1;
   repeated string error = 2;
   string id = 3;
+  string owner = 4;
 }
 
 //REMOVE
 message RemovePageRequest {
   string id = 1;
+  string owner = 2;
 }
 
 message RemovePageResponse {
@@ -101,4 +104,5 @@ message WikiPage {
   int32 childrenCount = 7;
   google.protobuf.Timestamp createdAt = 8;
   google.protobuf.Timestamp updatedAt = 9;
+  string owner = 10;
 }
