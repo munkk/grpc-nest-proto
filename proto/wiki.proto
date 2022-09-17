@@ -73,13 +73,13 @@ message UpdatePageRequest {
   string id = 1;
   string name = 2;
   string html = 3;
+  string owner = 4;
 }
 
 message UpdatePageResponse {
   int32 status = 1;
   repeated string error = 2;
   string id = 3;
-  string owner = 4;
 }
 
 //REMOVE
